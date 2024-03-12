@@ -24,10 +24,11 @@ class MyGui():
     self.quit.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
     self.root.bind('<Escape>', self.closeWin)
+    self.vg.show()
     self.root.mainloop()
 
   def calculate(self):
-    print("Calc")
+    pass
 
   def closeWin(self,key = None):
     if (messagebox.askyesno(title="Quit?", message="Do you really want to quit?")):
