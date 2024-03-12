@@ -19,12 +19,12 @@ class InputElement():
   
   def show(self, labelWidth, unitWidth):
     self.label = tk.Label(self.frame, text=self.label, font=("Arial",16), anchor="w", width=labelWidth)
-    self.label.pack(padx=10, pady=5, side=tk.LEFT, anchor="nw", expand=True)
+    self.label.pack(padx=0, pady=5, side=tk.LEFT, anchor="nw", expand=True)
 
     self.value = tk.IntVar(value = self.value)
     self.input = tk.Entry(self.frame, textvariable=self.value)
-    self.input.pack(padx=10, pady=5, side=tk.LEFT, anchor="n", expand=True)
+    self.input.pack(padx=0, pady=5, side=tk.LEFT, anchor="n", expand=True)
 
     self.unit = tk.Label(self.frame, text=self.unit, font=("Arial",16), anchor="w", width=unitWidth)
-    self.unit.pack(padx=10, pady=5, side=tk.LEFT, anchor="n",expand=True)
+    self.unit.pack(padx=0, pady=5, side=tk.LEFT, anchor="n",expand=True)
     

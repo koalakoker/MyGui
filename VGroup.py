@@ -18,7 +18,5 @@ class VGroup():
         maxLenLabel = len(value.label)
       if (len(value.unit) > maxLenUnit):
         maxLenUnit = len(value.unit)
-    print(maxLenLabel)
-    print(maxLenUnit)
     for key, value in self.fields.items():
       value.show(maxLenLabel,maxLenUnit)
