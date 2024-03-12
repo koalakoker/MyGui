@@ -11,18 +11,24 @@ class MyGui():
     self.verticalLayout.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
     self.fields = {}
-    self.fields["row1"] = InputElement.InputElement(self.verticalLayout, "PWM frequency", "Hz", 10000)
-    self.fields["row2"] = InputElement.InputElement(self.verticalLayout, "Dead time", "ns", 100)
-
+    self.fields["PWMfreq"] = InputElement.InputElement(self.verticalLayout, "PWM frequency#Hz", 10000)
+    self.fields["deadT"] = InputElement.InputElement(self.verticalLayout, "Dead time#ns", 100)
+    self.fields["RepRate"] = InputElement.InputElement(self.verticalLayout, "Rep Rate", 1)
     
     self.fields["bottomRow"] = tk.Frame(self.verticalLayout)
     self.fields["bottomRow"].pack(side=tk.TOP, fill=tk.X)
+
+    self.fields["calculate"] = tk.Button(self.fields["bottomRow"], text="Calculate", justify="left", command=self.calculate)
+    self.fields["calculate"].pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
     self.fields["quit"] = tk.Button(self.fields["bottomRow"], text="Quit", justify="left", command=self.closeWin)
     self.fields["quit"].pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
     self.root.bind('<Escape>', self.closeWin)
     self.root.mainloop()
+
+  def calculate(self):
+    print("Calc")
 
   def closeWin(self,key = None):
     if (messagebox.askyesno(title="Quit?", message="Do you really want to quit?")):
