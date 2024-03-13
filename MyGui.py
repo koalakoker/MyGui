@@ -2,29 +2,32 @@ import tkinter as tk
 from tkinter import messagebox
 from InputElement import InputElement
 from VGroup import VGroup
+from MainPack import MainPack
 
 mainBg = "#00234B"
 
 class MyGui():
   def __init__(self) -> None:
     self.root = tk.Tk()
+    self.root.title("GUI")
     self.root.geometry("400x600")
-    self.root.configure(bg="white")
+    self.root.configure(bg=mainBg)
 
-    self.vgIn = VGroup(self.root, mainBg)
+    self.mainPack = MainPack(self.root, mainBg)
+    self.vgIn = VGroup(self.mainPack.frame, mainBg)
 
     self.vgIn.add("PWMfreq", "PWM frequency#Hz", 10000)
     self.vgIn.add("deadT", "Dead time#ns", 100)
     self.vgIn.add("RepRate", "Rep Rate", 1)
 
-    self.vgOut = VGroup(self.root, "darkgray")
+    self.vgOut = VGroup(self.mainPack.frame, "darkgray")
 
     self.vgOut.add("Duty", "Duty cycle", 0)
     self.vgOut.add("MMI", "Maximum modulation Index", 0)
 
     self.vgIn.show()
     
-    self.bottomRow = tk.Frame(self.root, bg="blue") #bg = mainBg)
+    self.bottomRow = tk.Frame(self.root, bg = mainBg)
     self.bottomRow.pack(side=tk.BOTTOM, fill=tk.X)
 
     self.calculate = tk.Button(self.bottomRow, text="Calculate", justify="left", command=self.calculate, bg = mainBg, highlightbackground = mainBg)

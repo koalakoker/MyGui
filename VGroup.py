@@ -6,9 +6,8 @@ class VGroup():
     self.fields = {}
     self.parent = parent
     self.bg = bg
-    self.frame = tk.Frame(self.parent, bg = "red") #self.bg)
-    self.frame.pack(side=tk.TOP, fill=tk.BOTH, expand=False, padx=5, pady=5)
     self.isShown = False
+    self.frame = tk.Frame(self.parent, bg = self.bg)
 
   def add(self, name, labelUnit, initValue):
     self.fields[name] = InputElement(self.frame, labelUnit, initValue, self.bg)
@@ -24,6 +23,12 @@ class VGroup():
         lenUnitText = len(value.unitText)
         if (lenUnitText > maxLenUnit):
           maxLenUnit = lenUnitText
+      self.frame.pack(side=tk.TOP, fill=tk.BOTH, expand=False, padx=5, pady=5)
       for key, value in self.fields.items():
         value.show(maxLenLabel,maxLenUnit)
       self.isShown = True
+    else:
+      for key, value in self.fields.items():
+        value.hide()
+      self.isShown = False
+      self.frame.pack_forget()

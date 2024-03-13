@@ -16,16 +16,20 @@ class InputElement():
     self.bg = bg
     self.frame = tk.Frame(self.parent) # BG is not showed
     self.frame.pack(side=tk.TOP, fill=tk.X)
+    self.value = tk.IntVar(value = self.value)
 
 
   def show(self, labelWidth, unitWidth):
     self.label = tk.Label(self.frame, text=self.labelText, font=("Arial",16), anchor="w", width=labelWidth, bg=self.bg)
     self.label.pack(padx=0, pady=0, side=tk.LEFT, anchor="nw", expand=False, fill=tk.Y)
 
-    self.value = tk.IntVar(value = self.value)
     self.input = tk.Entry(self.frame, textvariable=self.value, highlightbackground = self.bg)
     self.input.pack(padx=0, pady=0, side=tk.LEFT, anchor="n", expand=True, fill=tk.X)
 
     self.unit = tk.Label(self.frame, text=self.unitText, font=("Arial",16), anchor="w", width=unitWidth, bg=self.bg)
     self.unit.pack(padx=0, pady=0, side=tk.LEFT, anchor="n",expand=False, fill=tk.Y)
-    
+
+  def hide(self):
+    self.label.pack_forget()
+    self.input.pack_forget()
+    self.unit.pack_forget()
