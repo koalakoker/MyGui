@@ -9,6 +9,7 @@ class MyGui():
   def __init__(self) -> None:
     self.root = tk.Tk()
     self.root.geometry("400x600")
+    self.root.configure(bg="white")
 
     self.vgIn = VGroup(self.root, mainBg)
 
@@ -23,8 +24,8 @@ class MyGui():
 
     self.vgIn.show()
     
-    self.bottomRow = tk.Frame(self.root, bg = mainBg)
-    self.bottomRow.pack(side=tk.TOP, fill=tk.X)
+    self.bottomRow = tk.Frame(self.root, bg="blue") #bg = mainBg)
+    self.bottomRow.pack(side=tk.BOTTOM, fill=tk.X)
 
     self.calculate = tk.Button(self.bottomRow, text="Calculate", justify="left", command=self.calculate, bg = mainBg, highlightbackground = mainBg)
     self.calculate.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)

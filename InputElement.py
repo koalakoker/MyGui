@@ -14,18 +14,18 @@ class InputElement():
     self.unitText = unit
     self.value = value
     self.bg = bg
-    self.frame = tk.Frame(self.parent, bg = self.bg)
+    self.frame = tk.Frame(self.parent) # BG is not showed
     self.frame.pack(side=tk.TOP, fill=tk.X)
 
 
   def show(self, labelWidth, unitWidth):
     self.label = tk.Label(self.frame, text=self.labelText, font=("Arial",16), anchor="w", width=labelWidth, bg=self.bg)
-    self.label.pack(padx=0, pady=5, side=tk.LEFT, anchor="nw", expand=True)
+    self.label.pack(padx=0, pady=0, side=tk.LEFT, anchor="nw", expand=False, fill=tk.Y)
 
     self.value = tk.IntVar(value = self.value)
     self.input = tk.Entry(self.frame, textvariable=self.value, highlightbackground = self.bg)
-    self.input.pack(padx=0, pady=5, side=tk.LEFT, anchor="n", expand=True)
+    self.input.pack(padx=0, pady=0, side=tk.LEFT, anchor="n", expand=True, fill=tk.X)
 
     self.unit = tk.Label(self.frame, text=self.unitText, font=("Arial",16), anchor="w", width=unitWidth, bg=self.bg)
-    self.unit.pack(padx=0, pady=5, side=tk.LEFT, anchor="n",expand=True)
+    self.unit.pack(padx=0, pady=0, side=tk.LEFT, anchor="n",expand=False, fill=tk.Y)
     
