@@ -3,9 +3,9 @@ from tkinter import messagebox
 from InputElement import InputElement
 from VGroup import VGroup
 from MainPack import MainPack
+from load import load
 
 mainBg = "#00234B"
-
 class MyGui():
   def __init__(self) -> None:
     self.root = tk.Tk()
@@ -15,20 +15,7 @@ class MyGui():
 
     self.mainPack = MainPack(self.root, mainBg)
     
-    self.vgIn = VGroup(self.mainPack.frame, mainBg)
-    self.vgIn.add("PWMfreq", "PWM frequency#Hz", 10000)
-    self.vgIn.add("deadT", "Dead time#ns", 100)
-    self.vgIn.add("RepRate", "Rep Rate", 1)
-    self.vgIn.show()
-
-    self.vgOut = VGroup(self.mainPack.frame, "darkgray")
-    self.vgOut.add("Duty", "Duty cycle", 0)
-    self.vgOut.add("MMI", "Maximum modulation Index", 0)
-
-    self.vg2 = VGroup(self.mainPack.frame, mainBg)
-    self.vg2.add("TNOISE", "T Noise#ns", 1000)
-    self.vg2.add("TRISE", "T Rise#ns", 1200)
-    self.vg2.show()
+    self.vg = load("defParams.txt", mainBg, lambda bg : VGroup(self.mainPack.frame, bg))
     
     self.bottomRow = tk.Frame(self.root, bg = mainBg)
     self.bottomRow.pack(side=tk.BOTTOM, fill=tk.X)
@@ -44,7 +31,7 @@ class MyGui():
     self.root.mainloop()
 
   def calculate(self):
-    self.vgOut.show()
+    self.vg["results"].show()
 
   def closeWin(self,key = None):
     if (messagebox.askyesno(title="Quit?", message="Do you really want to quit?")):

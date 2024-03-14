@@ -1,0 +1,16 @@
+name control
+PWMfreq, PWM frequency#Hz, 10000
+deadT, Dead time#ns, 100
+RepRate, Rep Rate, 1
+show 1
+
+name noise
+TNOISE, T Noise#ns, 1000
+TRISE, T Rise#ns, 1200
+show 1
+
+name results
+Duty, Duty cycle, 0
+MMI, Maximum modulation Index, 0
+show 0
+bg darkgray
