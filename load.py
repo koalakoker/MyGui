@@ -21,8 +21,15 @@ def load(fileName, mainBg, initf):
       parts = line.split(',')
       if (len(parts) == 3):
         text1, text2, number_str = parts
-        number = int(number_str)
-
+        
+        try:  
+          number = int(number_str)
+        except ValueError:
+          try:
+            number = float(number_str)
+          except ValueError:
+            continue
+        
         # Add the data to the current group
         current_group.append((text1, text2, number))
       

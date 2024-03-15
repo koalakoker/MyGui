@@ -14,7 +14,6 @@ class MyGui():
     self.root.configure(bg=mainBg)
 
     self.mainPack = MainPack(self.root, mainBg)
-    
     self.vg = load("defParams.txt", mainBg, lambda bg : VGroup(self.mainPack.frame, bg))
     
     self.bottomRow = tk.Frame(self.root, bg = mainBg)
@@ -31,6 +30,11 @@ class MyGui():
     self.root.mainloop()
 
   def calculate(self):
+    dt = self.vg["control"].fields["deadT"].value.get()
+    rs = self.vg["motor"].fields["RS"].value.get()
+    ls = self.vg["motor"].fields["LS"].value.get()
+    self.vg["results"].fields["Duty"].value.set(rs+dt)
+    self.vg["results"].fields["Out"].value.set(rs+ls)
     self.vg["results"].show()
 
   def closeWin(self,key = None):

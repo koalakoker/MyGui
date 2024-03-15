@@ -16,8 +16,10 @@ class InputElement():
     self.bg = bg
     self.frame = tk.Frame(self.parent) # BG is not showed
     self.frame.pack(side=tk.TOP, fill=tk.X)
-    self.value = tk.IntVar(value = self.value)
-
+    if isinstance(self.value, int):
+      self.value = tk.IntVar(value = self.value)
+    if isinstance(self.value, float):
+      self.value = tk.DoubleVar(value = self.value)
 
   def show(self, labelWidth, unitWidth):
     self.label = tk.Label(self.frame, text=self.labelText, font=("Arial",16), anchor="w", width=labelWidth, bg=self.bg)
