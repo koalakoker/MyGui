@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from PIL import Image, ImageTk
 from lib.VGroup import VGroup
 from lib.MainPack import MainPack
 from lib.load import loadParams, load
@@ -31,6 +32,12 @@ class MyGui():
 
     self.quit = tk.Button(self.bottomRow, text="Quit", justify="left", command=self.closeWin, bg = mainBg, highlightbackground = mainBg)
     self.quit.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
+
+    image = Image.open("fig.jpg")
+    image = image.resize((300, 200), Image.BICUBIC)
+    tk_image = ImageTk.PhotoImage(image)
+    label = tk.Label(self.root, image = tk_image)
+    label.pack(pady=20)
 
     self.root.bind('<Escape>', self.closeWin)
     
