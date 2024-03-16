@@ -11,7 +11,7 @@ mainBg = "#00234B"
 class MyGui():
   def __init__(self) -> None:
     self.root = tk.Tk()
-    self.root.title("GUI")
+    self.root.title("Second order equation solver")
     self.root.geometry("400x600")
     self.root.configure(bg=mainBg)
 
@@ -44,7 +44,7 @@ class MyGui():
     self.root.mainloop()
 
   def calculate(self):
-    calc("formulae.txt", self.vg)
+    calc("formulae.py", self.vg)
     self.vg["results"].show()
 
   def save(self):

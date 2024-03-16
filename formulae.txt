@@ -1,3 +1,0 @@
-Duty = RS + deadT
-Out = RS + LS
-MMI = 200

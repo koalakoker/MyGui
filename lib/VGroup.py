@@ -27,7 +27,10 @@ class VGroup():
       for key, value in self.fields.items():
         value.show(maxLenLabel,maxLenUnit)
       self.isShown = True
-    else:
+    
+  
+  def hide(self):
+    if (self.isShown):
       for key, value in self.fields.items():
         value.hide()
       self.isShown = False

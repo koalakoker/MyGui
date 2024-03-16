@@ -1,23 +1,14 @@
-name control
-PWMfreq, PWM frequency#Hz, 10000
-deadT, Dead time#ns, 100
-RepRate, Rep Rate, 1
-show 1
-
-name noise
-TNOISE, T Noise#ns, 1000
-TRISE, T Rise#ns, 1200
-show 1
-
-name motor
-PP, Poles Pairs, 2
-RS, Stator resistance#Ohm, 0.13
-LS, Stator inductance#mH, 0.1
+name inputs
+a, a, 1.0
+b, b, 1.0
+c, c, -1.0
 show 1
 
 name results
-Duty, Duty cycle, 0
-MMI, Maximum modulation Index, 0
-Out, Result, 0.1
+delta, delta, 0
+x1, x1, 0
+x2, x2, 0
+provex1, prove x1, 0
+provex2, prove x2, 0
 show 0
 bg darkgray
