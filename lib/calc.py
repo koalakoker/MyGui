@@ -10,8 +10,7 @@ def calc(file_path, vg):
     populateVars(var, vg)
     instruction = read(file_path)
     try:
-        print(instruction)
         exec(instruction, var)
     except Exception as e:
-        print(f"Error executing instruction '{instruction}': {e}")
+        print(f"Error executing instructions: {e}")
     storeVars(var, vg)
