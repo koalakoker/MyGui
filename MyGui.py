@@ -4,6 +4,7 @@ from InputElement import InputElement
 from VGroup import VGroup
 from MainPack import MainPack
 from load import load
+from calc import calc
 
 mainBg = "#00234B"
 class MyGui():
@@ -30,11 +31,7 @@ class MyGui():
     self.root.mainloop()
 
   def calculate(self):
-    dt = self.vg["control"].fields["deadT"].value.get()
-    rs = self.vg["motor"].fields["RS"].value.get()
-    ls = self.vg["motor"].fields["LS"].value.get()
-    self.vg["results"].fields["Duty"].value.set(rs+dt)
-    self.vg["results"].fields["Out"].value.set(rs+ls)
+    calc("formulae.txt", self.vg)
     self.vg["results"].show()
 
   def closeWin(self,key = None):
