@@ -4,6 +4,7 @@ from lib.VGroup import VGroup
 from lib.MainPack import MainPack
 from lib.load import load
 from lib.calc import calc
+from lib.save import save
 
 mainBg = "#00234B"
 class MyGui():
@@ -22,6 +23,12 @@ class MyGui():
     self.calculate = tk.Button(self.bottomRow, text="Calculate", justify="left", command=self.calculate, bg = mainBg, highlightbackground = mainBg)
     self.calculate.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
+    self.save = tk.Button(self.bottomRow, text="Save", justify="left", command=self.save, bg = mainBg, highlightbackground = mainBg)
+    self.save.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
+
+    self.load = tk.Button(self.bottomRow, text="Load", justify="left", command=self.save, bg = mainBg, highlightbackground = mainBg)
+    self.load.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
+
     self.quit = tk.Button(self.bottomRow, text="Quit", justify="left", command=self.closeWin, bg = mainBg, highlightbackground = mainBg)
     self.quit.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
@@ -32,6 +39,12 @@ class MyGui():
   def calculate(self):
     calc("formulae.txt", self.vg)
     self.vg["results"].show()
+
+  def save(self):
+    save(self.vg)
+
+  def load(self):
+    pass
 
   def closeWin(self,key = None):
     if (messagebox.askyesno(title="Quit?", message="Do you really want to quit?")):
