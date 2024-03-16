@@ -1,5 +1,8 @@
 import json
+import os
 from lib.calc import storeVars
+from lib.config import cfg
+from tkinter import filedialog
 
 def loadParams(fileName, mainBg, initf):
   vgroups = {}
@@ -95,5 +98,8 @@ def load_dict_from_file(file_path):
         return None
 
 def load(vg):
-  var = load_dict_from_file("save.txt")
-  storeVars(var, vg)
+  current_directory = os.getcwd()
+  fileName = filedialog.askopenfilename(initialdir = current_directory, defaultextension=cfg["defExt"], filetypes=[(cfg["fileType"], cfg["defExt"])])
+  if (filedialog):
+    var = load_dict_from_file(fileName)
+    storeVars(var, vg)

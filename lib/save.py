@@ -1,5 +1,8 @@
 from lib.vars import populateVars
+from lib.config import cfg
 import json
+from tkinter import filedialog
+import os
 
 def write_to_file(file_path, var):
   try:
@@ -12,6 +15,10 @@ def write_to_file(file_path, var):
     print(f"Error writing to file: {e}")
 
 def save(vg):
-  var = {}
-  populateVars(var, vg)
-  write_to_file("save.txt",var)
+  current_directory = os.getcwd()
+  file_path = filedialog.asksaveasfilename(initialdir = current_directory, defaultextension = cfg["defExt"], filetypes=[(cfg["fileType"], cfg["defExt"])])
+  if (file_path != ""):
+    var = {}
+    populateVars(var, vg)
+    write_to_file(file_path,var)
+  
