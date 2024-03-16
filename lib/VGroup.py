@@ -1,5 +1,5 @@
 import tkinter as tk
-from InputElement import InputElement
+from lib.InputElement import InputElement
 
 class VGroup():
   def __init__(self, parent, bg):

@@ -1,10 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
-from InputElement import InputElement
-from VGroup import VGroup
-from MainPack import MainPack
-from load import load
-from calc import calc
+from lib.VGroup import VGroup
+from lib.MainPack import MainPack
+from lib.load import load
+from lib.calc import calc
 
 mainBg = "#00234B"
 class MyGui():
