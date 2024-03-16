@@ -1,4 +1,7 @@
-def load(fileName, mainBg, initf):
+import json
+from lib.calc import storeVars
+
+def loadParams(fileName, mainBg, initf):
   vgroups = {}
   with open(fileName, "r") as file:
     # Initialize variables for grouping
@@ -78,3 +81,19 @@ def load(fileName, mainBg, initf):
         vg.show()
       vgroups[name] = vg
   return vgroups
+
+def load_dict_from_file(file_path):
+    try:
+        # Open the file in read mode
+        with open(file_path, 'r') as file:
+            # Load JSON data from file
+            dictionary = json.load(file)
+        print(f"Dictionary loaded successfully from {file_path}")
+        return dictionary
+    except Exception as e:
+        print(f"Error loading dictionary from file: {e}")
+        return None
+
+def load(vg):
+  var = load_dict_from_file("save.txt")
+  storeVars(var, vg)

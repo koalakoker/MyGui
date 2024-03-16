@@ -1,13 +1,13 @@
 {
-    "PWMfreq": 10000,
-    "deadT": 100,
-    "RepRate": 1,
-    "TNOISE": 1000,
-    "TRISE": 1200,
-    "PP": 2,
-    "RS": 0.13,
-    "LS": 0.1,
-    "Duty": 100,
-    "MMI": 200,
-    "Out": 0.23
+  "PWMfreq": 10000,
+  "deadT": 100,
+  "RepRate": 1,
+  "TNOISE": 1000,
+  "TRISE": 1200,
+  "PP": 2,
+  "RS": 0.26,
+  "LS": 0.1,
+  "Duty": 100,
+  "MMI": 200,
+  "Out": 0.36
 }
