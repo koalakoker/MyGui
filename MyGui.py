@@ -21,16 +21,16 @@ class MyGui():
     self.bottomRow = tk.Frame(self.root, bg = mainBg)
     self.bottomRow.pack(side=tk.BOTTOM, fill=tk.X)
 
-    self.calculate = tk.Button(self.bottomRow, text="Calculate", justify="left", command=self.calculate, bg = mainBg, highlightbackground = mainBg)
+    self.calculate = tk.Button(self.bottomRow, text="Calculate", justify="left", command=self.calculate, bg = mainBg, fg="white", highlightbackground = mainBg)
     self.calculate.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
-    self.save = tk.Button(self.bottomRow, text="Save", justify="left", command=self.save, bg = mainBg, highlightbackground = mainBg)
+    self.save = tk.Button(self.bottomRow, text="Save", justify="left", command=self.save, bg = mainBg, fg="white", highlightbackground = mainBg)
     self.save.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
-    self.load = tk.Button(self.bottomRow, text="Load", justify="left", command=self.load, bg = mainBg, highlightbackground = mainBg)
+    self.load = tk.Button(self.bottomRow, text="Load", justify="left", command=self.load, bg = mainBg, fg="white", highlightbackground = mainBg)
     self.load.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
-    self.quit = tk.Button(self.bottomRow, text="Quit", justify="left", command=self.closeWin, bg = mainBg, highlightbackground = mainBg)
+    self.quit = tk.Button(self.bottomRow, text="Quit", justify="left", command=self.closeWin, bg = mainBg, fg="white", highlightbackground = mainBg)
     self.quit.pack(padx=10, pady=5, side=tk.LEFT, anchor="s", expand=True)
 
     image = Image.open("fig.jpg")

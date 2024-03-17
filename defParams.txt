@@ -1,7 +1,7 @@
 name inputs
-a, a, 1.0
-b, b, 1.0
-c, c, -1.0
+a, a#unit, 1.0
+b, b#unit, 1.0
+c, c#unit, -1.0
 show 1
 
 name results
