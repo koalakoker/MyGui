@@ -1,4 +1,8 @@
 __pycache__
+build
+dist
 lib/__pycache__
 projects
+.DS_Store
+MyGui.spec
 test.py
