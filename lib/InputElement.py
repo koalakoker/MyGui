@@ -22,13 +22,13 @@ class InputElement():
       self.value = tk.DoubleVar(value = self.value)
 
   def show(self, labelWidth, unitWidth):
-    self.label = tk.Label(self.frame, text=self.labelText, font=("Arial",12), anchor="w", width=labelWidth, bg=self.bg, fg="white")
+    self.label = tk.Label(self.frame, text=self.labelText, anchor="w", width=labelWidth, bg=self.bg, fg="white")
     self.label.pack(padx=0, pady=0, side=tk.LEFT, anchor="nw", expand=False, fill=tk.Y)
 
     self.input = tk.Entry(self.frame, textvariable=self.value, highlightbackground = self.bg)
     self.input.pack(padx=0, pady=0, side=tk.LEFT, anchor="n", expand=True, fill=tk.X)
 
-    self.unit = tk.Label(self.frame, text=self.unitText, font=("Arial",16), anchor="w", width=unitWidth, bg=self.bg, fg = "white")
+    self.unit = tk.Label(self.frame, text=self.unitText, anchor="w", width=unitWidth, bg=self.bg, fg = "white")
     self.unit.pack(padx=0, pady=0, side=tk.LEFT, anchor="n",expand=False, fill=tk.Y)
 
   def hide(self):
