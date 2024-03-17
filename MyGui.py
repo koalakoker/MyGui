@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, PhotoImage
 from tkinter import messagebox
 from PIL import Image, ImageTk
 from lib.VGroup import VGroup
@@ -16,6 +16,13 @@ class MyGui():
     self.root.title("Second order equation solver")
     self.root.geometry("450x600")
     self.root.configure(bg=mainBg)
+
+    # Load the icon image for Mac
+    icon_image = PhotoImage(file="icon.png")
+    self.root.tk.call('wm', 'iconphoto', self.root._w, icon_image)
+
+    # Set the icon for Windows
+    self.root.iconbitmap('icon.ico')
 
     # Create a style
     style = ttk.Style()

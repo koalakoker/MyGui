@@ -7,3 +7,4 @@ projects
 MyGui.spec
 MyGui.exe
 test.py
+.DS_Store
